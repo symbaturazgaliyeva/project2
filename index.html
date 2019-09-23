@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<body>
+<div class="desktop"><h3 class="desktop-h3">Отображается только в мобильной версии!</h3></div>
+<div class="main-container" id="main">
+	<div class="nav">
+		<img src="img/nav.svg" class="nav-img">
+		<p class="nav-p">Баланс или интернет трафик полностью израсходован.</p>
+	</div>
+	<div class="block" v-if="step==1">
+		<div class="block-p">
+			<p class="block-p1">Мой номер:</p>
+			<p class="block-p2"><b>8(777)245 78 96</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1">На счету:</p>
+			<p class="block-p2"><b>1000тг.</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1">Интернет по тарифному плану:</p>
+			<p class="block-p2"><b>100МБ</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1">Остаток интернет пакета:</p>
+			<p class="block-p2"><b>20МБ</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1">Звонки на другие мобильные номера РК:</p>
+			<p class="block-p2"><b>30 мин</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1">SMS на номера Beeline:</p>
+			<p class="block-p2"><b>33</b></p>
+		</div>
+		<button class="btn" @click="step=2">Пополнить баланс</button>
+		<hr>
+		<h3>Восстановить пакет досрочно</h3>
+		<p class="h3-p">Убедитесь, что сумма на Вашем балансе достаточно для списания ежемесячной абонентской платы по тарифному плану.</p>
+		<button class="btn">Переподключить</button>
+	</div>
+	<div class="banner" v-if="step==1">
+		<img src="img/apple.svg" class="apple-icon">
+		<img src="img/google-play.svg" class="google-icon">
+		<p class="p-banner">Акции, которые точно тебя заинтересуют, в приложении "Мой Beeline"</p>
+	</div>
+	<div class="block2" v-if="step == 2">
+		<h3>Текущий тариф для роуминга в "России"</h3>
+		<p class="block-p1-2"><b>"Стандартный тариф"</b></p>
+		<div class="block-p">
+			<p class="block-p1-2">Безлим интернет за 690т в сутки:</p>
+			<p class="block-p2"><b>Скорость 64кб/сек</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1-2">Остаток 10 минут за 690т в сутки:</p>
+			<p class="block-p2"><b>9 минут 00 сек</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1-2">SMS:</p>
+			<p class="block-p2"><b>69т/сообщение</b></p>
+		</div>
+		<div class="block-p">
+			<p class="block-p1-2">Время до конца суток (по времени Астаны):</p>
+			<p class="block-p2"><b>XX часов</b></p>
+		</div>
+		<p class="h3-p">Просто начни пользоваться связью и условия начнут действовать автоматически.</p>
+		<button class="btn" @click="step=3">Узнать больше</button>
+	</div>
+	<div class="block3" v-if="step == 3">
+		<h3 class="h3-block3">Пополнение баланса</h3>
+		<button class="btn" @click="step=1">Оплата картой</button>
+		<p class="transparent">Без комиссии</p>
+		<hr>
+		<h3>Доверительный платеж</h3>
+		<p class="p-block3">Мы на 3 дня увеличим остаток на мобильном счете; Стоимость услуги 59тг.
+		Подключение *141#</p>
+		<button class="btn">Подробнее</button>
+		<hr>
+		<h3>Если на счету "0"</h3>
+		<p class="p-blue">"Пополни мой счёт"</p>
+			<p class="h3-p">Когда срочно нужна чья-то помощь</p>
+			<p class="h3-p"><b>0 тг. за подключение.</b></p>
+		<p class="p-blue2">"Доверительный платёж"</p>
+			<p class="h3-p">Если нет возможности пополнить счёт самому</p>
+			<p class="h3-p"><b>59 тг. за подключение.</b></p>
+		<p class="p-blue2">"Позвони мне"</p>
+			<p class="h3-p">Попроси друга перезвонить</p>
+			<p class="h3-p"><b>1 тг. за подключение.</b></p>
+		<p class="p-blue2">"Звонок за счёт друга"</p>
+			<p class="h3-p">Звони друзьям за их счёт</p>
+			<p class="h3-p"><b>0 тг. за подключение.</b></p>
+		<p class="p-blue2">"Мобильный перевод"</p>
+			<p class="h3-p">Быстрые переводы с баланса на баланс</p>
+			<p class="h3-p"><b>от 30 тг. за подключение.</b></p>
+	</div>
+	<p class="servise">Служба поддержки</p>
+	<p class="servise-number">0611</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="" src="app.js"></script>
+</body>
+</html>
